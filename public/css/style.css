@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Poppins:wght@300;400;500&display=swap');
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.wrapper {
+    max-width: 1140px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.mt-10 {
+    margin-top: 50px;
+}
+
+
+.center img{
+   border-radius: 50%;
+}
+
+.mt-2 {
+    margin-top: 20px;
+}
+
+.menu-list .menu-item {
+    display: inline-block;
+    padding: 10px;
+}
+
+
+.menu-list .menu-item .menu-link {
+    text-decoration: none;
+    color: #000;
+}
+
+
+.menu-list .menu-item .menu-link.active {
+    color: red;
+}
