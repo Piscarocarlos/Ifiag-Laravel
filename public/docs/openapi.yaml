@@ -1,0 +1,98 @@
+openapi: 3.0.3
+info:
+  title: 'Api Documentation for Ifiag'
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000/api'
+paths:
+  /api/register:
+    post:
+      summary: 'Api for register'
+      operationId: apiForRegister
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n'message': 'Compte créé',\n'access_token': \"ohrpohjo\",\n'token_type': 'Bearer',\n'expired_at: '2023-04-04'\n}"
+      tags:
+        - 'API Authentification'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'required. The name of the user.Example : John Doe'
+                  example: aut
+                email:
+                  type: string
+                  description: 'required. The email of the user.'
+                  example: john@doe.com
+                password:
+                  type: string
+                  description: 'min:6.'
+                  example: '123456'
+              required:
+                - password
+      security: []
+  /api/test-api:
+    get:
+      summary: ''
+      operationId: getApiTestApi
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/not-login-api:
+    get:
+      summary: ''
+      operationId: getApiNotLoginApi
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'User not authenticated'
+                properties:
+                  message:
+                    type: string
+                    example: 'User not authenticated'
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: 'API Authentification'
+    description: ''
+  -
+    name: Endpoints
+    description: ''
