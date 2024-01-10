@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost:8000\/api"
+            "value": "http:\/\/localhost:8000"
         }
     ],
     "info": {
         "name": "Api Documentation for Ifiag",
-        "_postman_id": "b1ddfaaf-4d0e-4c06-b8f6-dae3eda77ea1",
+        "_postman_id": "325021c5-6d83-4795-a8a4-e2173e088891",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"aut\",\"email\":\"john@doe.com\",\"password\":\"123456\"}"
+                            "raw": "{\"name\":\"consequatur\",\"email\":\"john@doe.com\",\"password\":\"123456\"}"
                         },
                         "description": "",
                         "auth": {
@@ -52,7 +52,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\n'message': 'Compte cr\u00e9\u00e9',\n'access_token': \"ohrpohjo\",\n'token_type': 'Bearer',\n'expired_at: '2023-04-04'\n}",
+                            "body": "{\n\"message\": \"Compte cr\u00e9\u00e9\",\n\"access_token\": \"ohrpohjo\",\n\"token_type\": \"Bearer\",\n\"expired_at\": \"2023-04-04\"\n}",
                             "name": ""
                         }
                     ]

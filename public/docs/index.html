@@ -98,7 +98,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: January 8, 2024</li>
+        <li>Last updated: January 10, 2024</li>
     </ul>
 </div>
 
@@ -107,7 +107,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost:8000/api</code>
+    <strong>Base URL</strong>: <code>http://localhost:8000</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -133,11 +133,11 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/api/register" \
+    "http://localhost:8000/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"aut\",
+    \"name\": \"consequatur\",
     \"email\": \"john@doe.com\",
     \"password\": \"123456\"
 }"
@@ -146,7 +146,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/register"
+    "http://localhost:8000/api/register"
 );
 
 const headers = {
@@ -155,7 +155,7 @@ const headers = {
 };
 
 let body = {
-    "name": "aut",
+    "name": "consequatur",
     "email": "john@doe.com",
     "password": "123456"
 };
@@ -175,10 +175,10 @@ fetch(url, {
                 <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-&#039;message&#039;: &#039;Compte cr&eacute;&eacute;&#039;,
-&#039;access_token&#039;: &quot;ohrpohjo&quot;,
-&#039;token_type&#039;: &#039;Bearer&#039;,
-&#039;expired_at: &#039;2023-04-04&#039;
+    &quot;message&quot;: &quot;Compte cr&eacute;&eacute;&quot;,
+    &quot;access_token&quot;: &quot;ohrpohjo&quot;,
+    &quot;token_type&quot;: &quot;Bearer&quot;,
+    &quot;expired_at&quot;: &quot;2023-04-04&quot;
 }</code>
  </pre>
     </span>
@@ -258,10 +258,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="aut"
+               value="consequatur"
                data-component="body">
     <br>
-<p>required. The name of the user.Example : John Doe Example: <code>aut</code></p>
+<p>required. The name of the user.Example : John Doe Example: <code>consequatur</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -304,14 +304,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/api/test-api" \
+    --get "http://localhost:8000/api/test-api" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/test-api"
+    "http://localhost:8000/api/test-api"
 );
 
 const headers = {
@@ -428,14 +428,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/api/not-login-api" \
+    --get "http://localhost:8000/api/not-login-api" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/api/not-login-api"
+    "http://localhost:8000/api/not-login-api"
 );
 
 const headers = {

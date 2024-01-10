@@ -26,7 +26,7 @@ endpoints:
         name: name
         description: 'required. The name of the user.Example : John Doe'
         required: false
-        example: aut
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -50,7 +50,7 @@ endpoints:
         exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      name: aut
+      name: consequatur
       email: john@doe.com
       password: '123456'
     fileParameters: []
@@ -59,10 +59,10 @@ endpoints:
         status: 200
         content: |-
           {
-          'message': 'Compte créé',
-          'access_token': "ohrpohjo",
-          'token_type': 'Bearer',
-          'expired_at: '2023-04-04'
+          "message": "Compte créé",
+          "access_token": "ohrpohjo",
+          "token_type": "Bearer",
+          "expired_at": "2023-04-04"
           }
         headers: []
         description: ''
