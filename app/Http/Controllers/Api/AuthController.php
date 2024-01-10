@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
+use App\Services\Auth\AuthService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -12,6 +14,13 @@ use Illuminate\Support\Facades\Hash;
  */
 class AuthController extends Controller
 {
+
+    private $authService;
+    public function __construct(AuthService $authService)
+    {
+        $this->authService = $authService;
+    }
+
     /**
      * Api for register
      *
@@ -19,38 +28,21 @@ class AuthController extends Controller
      * @bodyParam email string required. The email of the user. Example: john@doe.com
      * @bodyParam password string required min:6. Example: 123456
      * @response {
-     * 'message': 'Compte créé',
-     * 'access_token': "ohrpohjo",
-     * 'token_type': 'Bearer',
-     * 'expired_at: '2023-04-04'
+     * "message": "Compte créé",
+     * "access_token": "ohrpohjo",
+     * "token_type": "Bearer",
+     * "expired_at": "2023-04-04"
      * }
      */
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
-        $request->validate([
-            'name' => 'required|min:3',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6'
-        ]);
+        $user = $this->authService->create($request);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = Hash::make($request->password);
-        $user->save();
-
+        $this->authService->createStudent($request, $user);
         // welcome email
 
-        $tokenResult = $user->createToken('Personal Access Token');
-        $token = $tokenResult->token;
+        $tokenResult = $this->authService->createAccessToken($user);
 
-        $token->save();
-
-        return response()->json([
-            'message'  => 'Compte créé avec succès',
-            'access_token' => $tokenResult->accessToken,
-            'token_type' => 'Bearer',
-            'expires_at' => $tokenResult->token->expires_at
-        ]);
+        return $this->authService->buildResponse($tokenResult, "Compte créé avec succès");
     }
 }
