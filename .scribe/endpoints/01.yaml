@@ -26,7 +26,7 @@ endpoints:
         name: name
         description: 'required. The name of the user.Example : John Doe'
         required: false
-        example: consequatur
+        example: dolorem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -50,7 +50,7 @@ endpoints:
         exampleWasSpecified: true
         custom: []
     cleanBodyParameters:
-      name: consequatur
+      name: dolorem
       email: john@doe.com
       password: '123456'
     fileParameters: []

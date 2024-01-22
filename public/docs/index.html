@@ -26,7 +26,7 @@
             </style>
 
     <script>
-        var tryItOutBaseUrl = "http://localhost:8000";
+        var tryItOutBaseUrl = "http://localhost:8001";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -98,7 +98,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: January 10, 2024</li>
+        <li>Last updated: January 22, 2024</li>
     </ul>
 </div>
 
@@ -107,7 +107,7 @@
     <div class="content">
         <h1 id="introduction">Introduction</h1>
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost:8000</code>
+    <strong>Base URL</strong>: <code>http://localhost:8001</code>
 </aside>
 <p>This documentation aims to provide all the information you need to work with our API.</p>
 <aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
@@ -133,11 +133,11 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/register" \
+    "http://localhost:8001/api/register" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"consequatur\",
+    \"name\": \"dolorem\",
     \"email\": \"john@doe.com\",
     \"password\": \"123456\"
 }"
@@ -146,7 +146,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/register"
+    "http://localhost:8001/api/register"
 );
 
 const headers = {
@@ -155,7 +155,7 @@ const headers = {
 };
 
 let body = {
-    "name": "consequatur",
+    "name": "dolorem",
     "email": "john@doe.com",
     "password": "123456"
 };
@@ -258,10 +258,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="consequatur"
+               value="dolorem"
                data-component="body">
     <br>
-<p>required. The name of the user.Example : John Doe Example: <code>consequatur</code></p>
+<p>required. The name of the user.Example : John Doe Example: <code>dolorem</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -304,14 +304,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/test-api" \
+    --get "http://localhost:8001/api/test-api" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/test-api"
+    "http://localhost:8001/api/test-api"
 );
 
 const headers = {
@@ -328,7 +328,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-test-api">
             <blockquote>
-            <p>Example response (401):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -336,11 +336,13 @@ fetch(url, {
             </summary>
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
+x-ratelimit-limit: 60
+x-ratelimit-remaining: 57
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;Unauthenticated.&quot;
+    &quot;message&quot;: &quot;Bonjour &agrave; tous&quot;
 }</code>
  </pre>
     </span>
@@ -428,14 +430,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/not-login-api" \
+    --get "http://localhost:8001/api/not-login-api" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/not-login-api"
+    "http://localhost:8001/api/not-login-api"
 );
 
 const headers = {
@@ -461,7 +463,7 @@ fetch(url, {
             <pre><code class="language-http">cache-control: no-cache, private
 content-type: application/json
 x-ratelimit-limit: 60
-x-ratelimit-remaining: 59
+x-ratelimit-remaining: 56
 access-control-allow-origin: *
  </code></pre></details>         <pre>
 
