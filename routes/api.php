@@ -8,7 +8,7 @@ Route::get('test-api', function() {
     return response()->json([
         'message' => 'Bonjour à tous'
     ]);
-})->middleware('auth:api');
+});
 
 
 Route::get('not-login-api', function() {

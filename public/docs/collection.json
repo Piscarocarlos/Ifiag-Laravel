@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost:8000"
+            "value": "http:\/\/localhost:8001"
         }
     ],
     "info": {
         "name": "Api Documentation for Ifiag",
-        "_postman_id": "325021c5-6d83-4795-a8a4-e2173e088891",
+        "_postman_id": "53d15753-60db-4414-87d8-0f7b6d25aec9",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"consequatur\",\"email\":\"john@doe.com\",\"password\":\"123456\"}"
+                            "raw": "{\"name\":\"dolorem\",\"email\":\"john@doe.com\",\"password\":\"123456\"}"
                         },
                         "description": "",
                         "auth": {
@@ -101,12 +101,20 @@
                                     "value": "application\/json"
                                 },
                                 {
+                                    "key": "x-ratelimit-limit",
+                                    "value": "60"
+                                },
+                                {
+                                    "key": "x-ratelimit-remaining",
+                                    "value": "57"
+                                },
+                                {
                                     "key": "access-control-allow-origin",
                                     "value": "*"
                                 }
                             ],
-                            "code": 401,
-                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "code": 200,
+                            "body": "{\"message\":\"Bonjour \\u00e0 tous\"}",
                             "name": ""
                         }
                     ]
@@ -154,7 +162,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "56"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
