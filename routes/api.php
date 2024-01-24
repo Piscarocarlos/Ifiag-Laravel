@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\DataController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,5 +18,6 @@ Route::get('not-login-api', function() {
     ]);
 })->name('not-login-api');
 
+Route::get('users', [DataController::class, 'users']);
 
 Route::post('register', [AuthController::class, 'register'])->name('register');
