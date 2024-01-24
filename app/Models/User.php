@@ -42,4 +42,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    protected $appends = ['avatar'];
+
+    public function getNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getAvatarAttribute($value)
+    {
+        return is_null($value) ? "https://ui-avatars.com/api/?name="
+                            . str_replace(" ", "+", $this->name)
+                            : asset($value);
+    }
 }
